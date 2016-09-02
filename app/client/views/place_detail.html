@@ -1,0 +1,38 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a  class="navbar-brand" href="http://localhost:5000/#/">Home</a></li>
+    </div>
+  </div>
+</nav>
+
+<h1 class="display-1">{{vm.placeDetails.location}}</h1>
+
+<div map-lazy-load="https://maps.google.com/maps/api/js"
+  map-lazy-load-params="{{vm.googleMapsUrl}}">
+  <ng-map center="{{vm.placeDetails.lat}},{{vm.placeDetails.lon}}" zoom="6">
+    <marker position="{{vm.placeDetails.lat}},{{vm.placeDetails.lon}}" title="{{vm.placeDetails.location}}"></marker>
+  </ng-map>
+</div>
+
+<h2 class="display-2">Edit</h2>
+
+    <form class="form-inline">
+      <div class="form-group">
+        <p><label for="location">Location: </label><input ng-model="vm.placeDetails.location" id="location" type="text"><ng-if</p>
+      </div>
+      <div class="form-group">
+        <p><label for="lat">Latitude: </label><input ng-model="vm.placeDetails.lat" id="lat" type="text"></p>
+      </div>
+      <div class="form-group">
+        <p><label for="lon">Longitude: </label><input ng-model="vm.placeDetails.lon" id="lon" type="text"></p>
+      </div>
+      <div class="form-group">
+        <p><a href="" ng-click="vm.updatePlace()" class="btn btn-secondary btn-md">Update Location</a></p>
+      </div>
+        <p ng-if="vm.success">{{vm.success}}</p>
+        <div ng-if="vm.failure">
+          <p>Update Failed</p>
+          <p ng-repeat="error in vm.errorMessages">{{error.message}}</p>
+        </div>
+    </form>

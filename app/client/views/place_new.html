@@ -1,0 +1,28 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a  class="navbar-brand" href="http://localhost:5000/#/">Home</a></li>
+    </div>
+  </div>
+</nav>
+
+  <h1 class="display-1">New Location</h1>
+    <form class="form-inline">
+      <div class="form-group">
+        <p><label for="location">Location: </label><input ng-model="vm.newPlace.location" id="location" type="text"></p>
+      </div>
+      <div class="form-group">
+        <p><label for="lat">Latitude: </label><input ng-model="vm.newPlace.lat" id="lat" type="text"></p>
+      </div>
+      <div class="form-group">
+        <p><label for="lon">Longitude: </label><input ng-model="vm.newPlace.lon" id="lon" type="text"></p>
+      </div>
+      <div class="form-group">
+        <p><a href="" class="btn btn-secondary btn-md" ng-click="vm.addPlace()">Create New Location</a></p>
+      </div>
+        <p ng-if="vm.success">{{vm.success}}</p>
+        <div ng-if="vm.failure">
+          <p>Creation Failed</p>
+          <p ng-repeat="error in vm.errorMessages">{{error.message}}</p>
+        </div>
+      </form>
