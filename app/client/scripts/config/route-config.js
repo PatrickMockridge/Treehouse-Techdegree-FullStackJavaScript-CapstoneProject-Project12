@@ -26,6 +26,11 @@
             controllerAs: 'vm',
             templateUrl: '/views/weather.html'
           })
+          .when('/space_station', {
+            controller: 'spaceController',
+            controllerAs: 'vm',
+            templateUrl: '/views/ISS_location.html'
+          })
          .otherwise({
            redirectTo: '/'
          });
