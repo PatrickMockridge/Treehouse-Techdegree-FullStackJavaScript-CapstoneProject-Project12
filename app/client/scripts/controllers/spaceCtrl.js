@@ -17,8 +17,6 @@ angular
         dataServiceSpace.getISS(function(response) {
           console.log(response.data);
           vm.locationISS = response.data;
-        }, function(error) {
-          vm.errorMessages = error.data.errors
         });
       };
 
