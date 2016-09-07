@@ -5,7 +5,7 @@ angular
   .controller('placeController', ['dataServicePlaces', '$routeParams', function(dataServicePlaces, $routeParams){
     // define view model
     var vm = this;
-    vm.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyDe6vikroAoydnIrfEUWl0wZRCj81F-Jls&v";
+    vm.googleMapsUrl="https://maps.googleapis.com/maps/api/js?v=3.25&key=AIzaSyDe6vikroAoydnIrfEUWl0wZRCj81F-Jls&v";
     // define ID of book from routeparams
     vm.ID = $routeParams.id;
     // get all books
