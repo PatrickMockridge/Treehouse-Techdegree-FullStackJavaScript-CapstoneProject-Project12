@@ -1,14 +1,14 @@
 {
   "development": {
-    "storage": "library.db",
+    "storage": "places.db",
     "dialect": "sqlite"
   },
   "test": {
-    "storage": "library.db",
+    "storage": "places.db",
     "dialect": "sqlite"
   },
   "production": {
-    "storage": "library.db",
+    "storage": "places.db",
     "dialect": "sqlite"
   }
 }
